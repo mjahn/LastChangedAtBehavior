@@ -1,10 +1,6 @@
 <?php
 
 /**
- * This file is part of the Propel package.
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- *
  * @license MIT License
  */
 
@@ -13,10 +9,11 @@ namespace Propel\Generator\Behavior\LastChangedAt;
 use Propel\Generator\Model\Behavior;
 
 /**
- * Gives a model class the ability to track creation and last modification dates
- * Uses two additional columns storing the creation and update date
+ * Gives a model class the ability to update the timestamp of 
+ * a field named 'last_changed_at' with the latest timestamp 
+ * of any related model-class
  *
- * @author François Zaninotto
+ * @author Martin Jahn
  */
 class LastChangedAtBehavior extends Behavior
 {
@@ -32,7 +29,7 @@ class LastChangedAtBehavior extends Behavior
     }
 
     /**
-     * Add the create_column and update_columns to the current table
+     * Add the last_changed_at<column to the current table
      */
     public function modifyTable()
     {
@@ -47,10 +44,10 @@ class LastChangedAtBehavior extends Behavior
     }
 
     /**
-     * Get the setter of one of the columns of the behavior
+     * Get the setter of the columns of the behavior
      *
-     * @param  string $column One of the behavior columns, 'create_column' or 'update_column'
-     * @return string The related setter, 'setCreatedOn' or 'setUpdatedOn'
+     * @param  string $column One of the behavior columns, 'last_changed_at'
+     * @return string The related setter, 'setLastChangedOn'
      */
     protected function getColumnSetter($column)
     {
