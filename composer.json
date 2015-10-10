@@ -1,0 +1,22 @@
+{
+  "name": "mjahn/last-updated-at-behavior",
+  "description": "A behavior allowing you to generate a last changed column calculated from all related tables with a column updated_at for Propel2.",
+  "require": {
+    "propel/propel": "2.0.*@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "mjahn\\LastChangedAtBehavior\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Martin Jahn",
+      "email": "martinjahn@gmail.com"
+    }
+  ],
+  "extra": {
+    "name": "last_changed_at_behaviour",
+    "class": "\\mjahn\\LastChangedAtBehavior\\LastChangedAtBehavior"
+  }
+}
